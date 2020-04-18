@@ -5,6 +5,7 @@ const x = [
     0, 0, 0
 ];
 var i = 0;
+
 function moveMan(id) {
     if (x[id] != 0) return false;
     x[id] = 1;
@@ -71,13 +72,6 @@ function checkFirstSteps() {
     if (x[5] == 1 && x[7] == 1 && x[2] == 0) return 2;
 }
 
-
-function numbers(a, b, c) {
-    if (x[a] + x[b] + x[c] == 3) return 3;
-    if (x[a] + x[b] + x[c] == -3) return -3;
-    else return false;
-}
-
 function checkEnd(num, text) {
     for (let i = 0; i < n.length; i += 3) {
         if (x[n[i]] == num &&
@@ -86,11 +80,12 @@ function checkEnd(num, text) {
     }
 }
 var unswer;
-// aiWins
+
 function whoWin(text) {
     unswer = setTimeout(text, 300)
     if (unswer) return setTimeout(() => reset(), 400);
 }
+
 function reset() {
     window.location.reload()
 }
