@@ -89,7 +89,7 @@ var unswer;
 // aiWins
 function whoWin(text) {
     unswer = setTimeout(text, 300)
-    if(unswer)return setTimeout(() =>  reset(), 400);
+    if (unswer) return setTimeout(() => reset(), 400);
 }
 function reset() {
     window.location.reload()
