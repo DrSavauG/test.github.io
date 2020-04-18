@@ -6,8 +6,6 @@ const x = [
 ];
 var i = 0;
 function moveMan(id) {
-    i++;
-    if(i==5)whoWin("alert('Ничья')");
     if (x[id] != 0) return false;
     x[id] = 1;
     document.getElementById(id).className = "cell " + "hero";
@@ -27,6 +25,8 @@ function moveAi() {
         } else step = otherCases();
     }
     x[step] = -1;
+    i++;
+    if (i > 4) whoWin("alert('Ничья')");
     document.getElementById(step).className = "cell " + "zero";
     checkEnd(-1, "alert('Ты проиграл!!!')");
 }
